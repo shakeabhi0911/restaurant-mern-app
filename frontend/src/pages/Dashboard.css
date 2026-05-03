@@ -1,0 +1,209 @@
+.dashboard-hero {
+  background: var(--forest);
+  padding: 140px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: var(--cream);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+/* Stats bar */
+.dash-stats-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--cream-dk);
+  padding: 0;
+}
+.dash-stats-inner {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.dash-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 40px;
+  border-right: 1px solid var(--cream-dk);
+  flex: 1;
+  min-width: 160px;
+}
+.dash-stat__icon { font-size: 2rem; }
+.dash-stat__val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1;
+}
+.dash-stat__lbl {
+  font-size: .8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: 4px;
+}
+
+/* Tabs */
+.dash-tabs-wrap { padding: 40px 24px 80px; }
+.dash-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--cream-dk);
+  padding-bottom: 0;
+  margin-bottom: 36px;
+}
+.dash-tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: .95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--transition);
+  border-radius: 4px 4px 0 0;
+}
+.dash-tab:hover { color: var(--forest); background: var(--cream-dk); }
+.dash-tab.active {
+  color: var(--forest);
+  border-bottom-color: var(--amber);
+  font-weight: 600;
+}
+
+/* Panel */
+.dash-panel { animation: pageFade .3s ease; }
+.dash-panel h2 {
+  font-size: 1.8rem;
+  color: var(--forest);
+  margin-bottom: 28px;
+}
+.dash-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.dash-panel__head h2 { margin-bottom: 0; }
+
+/* Table */
+.dash-table-wrap { overflow-x: auto; border-radius: var(--radius); }
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.dash-table th {
+  background: var(--forest);
+  color: var(--white);
+  text-align: left;
+  padding: 14px 20px;
+  font-size: .82rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.dash-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--cream-dk);
+  font-size: .92rem;
+  color: var(--text);
+  vertical-align: middle;
+}
+.dash-table tbody tr:hover { background: var(--cream); }
+.dash-table tbody tr:last-child td { border-bottom: none; }
+.table-desc { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.price-chip {
+  background: var(--cream-dk);
+  color: var(--terra);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: .88rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.empty-msg {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  padding: 60px 0;
+  font-size: 1.05rem;
+}
+
+/* Add Item Form */
+.add-item-wrap { max-width: 600px; }
+.add-item-form { display: flex; flex-direction: column; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.field-error {
+  display: block;
+  color: #dc3545;
+  font-size: .82rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Hours Grid */
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.hours-card {
+  padding: 24px 20px;
+  text-align: center;
+  background: var(--white);
+  position: relative;
+}
+.hours-card--today {
+  border: 2px solid var(--amber);
+  background: linear-gradient(135deg, #fffbf2, #fff8e8);
+}
+.today-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--amber);
+  color: var(--white);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.hours-card h3 {
+  font-size: 1.05rem;
+  color: var(--forest);
+  margin-bottom: 10px;
+}
+.hours-time {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: .88rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .dash-stat { padding: 20px 24px; }
+  .form-row   { grid-template-columns: 1fr; }
+}

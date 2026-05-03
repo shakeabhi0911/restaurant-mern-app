@@ -1,0 +1,140 @@
+.consumers-hero {
+  background: var(--forest);
+  padding: 140px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.consumers-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--cream);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.consumers-form-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.consumers-form-card {
+  padding: 40px;
+  background: var(--white);
+}
+.consumers-form-card__header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.consumers-form-card__icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+.consumers-form-card__header h2 {
+  font-size: 1.8rem;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+.consumers-form-card__header p {
+  color: var(--text-muted);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: .95rem;
+}
+
+.form-group--error input,
+.form-group--error select,
+.form-group--error textarea {
+  border-color: #dc3545 !important;
+}
+.field-error {
+  display: block;
+  color: #dc3545;
+  font-size: .82rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.consumers-submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+  display: inline-block;
+}
+
+/* Info Panel */
+.consumers-info {
+  padding: 36px;
+  background: var(--forest);
+  border-radius: var(--radius-lg);
+  color: rgba(255,255,255,.85);
+}
+.consumers-info h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.consumers-info__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.consumers-info__list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .95rem;
+}
+.consumers-info__list li span:first-child {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.consumers-info__hours {
+  background: rgba(255,255,255,.1);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.consumers-info__hours h4 {
+  font-size: 1rem;
+  color: var(--amber-lt);
+  margin-bottom: 14px;
+}
+.consumers-info__hours ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.consumers-info__hours li {
+  font-size: .9rem;
+  display: flex;
+  justify-content: space-between;
+  opacity: .85;
+}
+
+@media (max-width: 768px) {
+  .consumers-form-wrap { grid-template-columns: 1fr; }
+  .consumers-form-card { padding: 28px 24px; }
+}

@@ -1,0 +1,67 @@
+.footer {
+  background: var(--forest);
+  color: rgba(255,255,255,.8);
+  padding-top: 60px;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.footer__logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  display: block;
+  margin-bottom: 12px;
+}
+.footer__brand p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: .95rem;
+  line-height: 1.7;
+  opacity: .75;
+}
+.footer__links h4,
+.footer__hours h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--amber-lt);
+  margin-bottom: 16px;
+}
+.footer__links ul,
+.footer__hours ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__links a {
+  color: rgba(255,255,255,.7);
+  transition: var(--transition);
+  font-size: .95rem;
+}
+.footer__links a:hover {
+  color: var(--amber-lt);
+  padding-left: 4px;
+}
+.footer__hours li {
+  font-size: .9rem;
+  opacity: .75;
+}
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  text-align: center;
+  padding: 20px 24px;
+  font-size: .85rem;
+  opacity: .55;
+}
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
